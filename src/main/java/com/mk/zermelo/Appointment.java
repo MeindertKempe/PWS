@@ -168,7 +168,7 @@ public class Appointment {
 	}
 
 	public boolean isNew() {
-		return New;
+		return isnew;
 	}
 
 	public String getRemark() {
