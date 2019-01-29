@@ -1,12 +1,11 @@
 package com.mk.zermelo;
 
+import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 
-@androidx.room.Dao
-public interface Dao {
-	@Insert
-	public void insertUser(User user);
+@Dao
+public interface AppointmentDao {
 
 	@Insert
 	public void insertAppointment(Appointment appointment);
