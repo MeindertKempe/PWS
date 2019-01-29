@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Zermelo</string>
+        <string name="SharedPreferences">preference_file</string>
 </resources>
