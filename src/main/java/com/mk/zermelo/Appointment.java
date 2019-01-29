@@ -52,11 +52,6 @@ public class Appointment {
 		this.userId = userId;
 	}
 
-	public Appointment() {
-
-	}
-
-
 	@PrimaryKey(autoGenerate = true)
 	private int id;
 	private long start;
@@ -167,7 +162,7 @@ public class Appointment {
 		return hidden;
 	}
 
-	public boolean isNew() {
+	public boolean isIsnew() {
 		return isnew;
 	}
 
