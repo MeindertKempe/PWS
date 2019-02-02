@@ -1,5 +1,6 @@
 package com.mk.zermelo;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Index;
@@ -9,18 +10,39 @@ import androidx.room.PrimaryKey;
 		entity = User.class,
 		parentColumns = "id",
 		childColumns = "userId"
-		),
-		indices = {@Index("id"), @Index("userId")}
+),
+		indices = {@Index("start"), @Index("end"), @Index("userId")}
 )
-public class Appointment {
+public class Appointment implements Comparable<Appointment> {
 
 	// TODO refactor to list
-	public Appointment(int id, long start, long end, int startTimeSlot, int endTimeSlot, String startTimeSlotName,
-	                   String endTimeSlotName, boolean valid, boolean cancelled, boolean modified, boolean moved,
-	                   boolean hidden, boolean isnew, String remark, String changeDescription, String branch,
-	                   String branchOfSchool, long created, long lastModified, int appointmentInstance, String type,
-	                   String subjects, String teachers, String groupsInDepartments, String groups,
-	                   String locationsOfBranch, String locations, int userId) {
+	public Appointment(int id,
+	                   long start,
+	                   long end,
+	                   int startTimeSlot,
+	                   int endTimeSlot,
+	                   String startTimeSlotName,
+	                   String endTimeSlotName,
+	                   boolean valid,
+	                   boolean cancelled,
+	                   boolean modified, boolean moved,
+	                   boolean hidden,
+	                   boolean isnew,
+	                   String remark,
+	                   String changeDescription,
+	                   String branch,
+	                   int branchOfSchool,
+	                   long created,
+	                   long lastModified,
+	                   int appointmentInstance,
+	                   String type,
+	                   String subjects,
+	                   String teachers,
+	                   String groupsInDepartments,
+	                   String groups,
+	                   String locationsOfBranch,
+	                   String locations,
+	                   int userId) {
 		this.id = id;
 		this.start = start;
 		this.end = end;
@@ -70,7 +92,7 @@ public class Appointment {
 	private String remark;
 	private String changeDescription;
 	private String branch;
-	private String branchOfSchool;
+	private int branchOfSchool;
 	private long created;
 	private long lastModified;
 	private int appointmentInstance;
@@ -178,7 +200,7 @@ public class Appointment {
 		return branch;
 	}
 
-	public String getBranchOfSchool() {
+	public int getBranchOfSchool() {
 		return branchOfSchool;
 	}
 
@@ -224,5 +246,11 @@ public class Appointment {
 
 	public int getUserId() {
 		return userId;
+	}
+
+	@Override
+	public int compareTo(@NonNull Appointment o) {
+		long result = this.getStart() - o.getStart();
+		return ((int) result);
 	}
 }

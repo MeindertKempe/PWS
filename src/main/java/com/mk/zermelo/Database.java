@@ -1,7 +1,6 @@
 package com.mk.zermelo;
 
 import android.content.Context;
-
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
@@ -12,12 +11,13 @@ public abstract class Database extends RoomDatabase {
 	private static Database instance;
 
 	public static synchronized Database getInstance(Context context) {
-		if(instance == null) {
+		if (instance == null) {
 			instance = Room.databaseBuilder(context.getApplicationContext(), Database.class, "Database").fallbackToDestructiveMigration().build();
 		}
-		return  instance;
+		return instance;
 	}
 
 	public abstract UserDao userDao();
+
 	public abstract AppointmentDao appointmentDao();
 }

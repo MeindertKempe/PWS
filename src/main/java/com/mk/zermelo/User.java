@@ -14,13 +14,16 @@ public class User {
 	private String apiToken;
 	private String url;
 
-	public User(String apiToken, String url) {
-		this.apiToken = apiToken;
+	public User(String url) {
 		this.url = url;
 	}
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public void setApiToken(String apiToken) {
+		this.apiToken = apiToken;
 	}
 
 	public int getId() {
