@@ -92,9 +92,7 @@ public class Zermelo {
 
 		// Get the returned data stream
 		InputStream inputStream = httpscon.getInputStream();
-
-		// https://stackoverflow.com/questions/309424/how-do-i-read-convert-an-inputstream-into-a-string-in-java
-		// todo this
+		
 		Scanner scanner = new Scanner(inputStream, "UTF-8").useDelimiter("\\A");
 		String result = scanner.next();
 
