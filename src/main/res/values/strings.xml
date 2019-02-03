@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Zermelo</string>
-        <string name="SharedPreferences">preference_file</string>
+    <string name="preferences_file_key">preferences</string>
+    <string name="current_user_key">current_user</string>
+    <string name="school_url">School</string>
+    <string name="auth_code">Authentication Code</string>
+    <string name="continue_setup">Continue</string>
+    <string name="add_user_error">Error: Setup failed, please try again later</string>
+    <string name="refresh_error">Failed to refresh schedule</string>
 </resources>
