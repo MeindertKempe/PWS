@@ -26,11 +26,11 @@ dependencies {
 	implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0-alpha02'
 	annotationProcessor "androidx.room:room-compiler:$room_version"
 
-	// Add card view and RecyclerView
+	// CardView and RecyclerView
 	implementation 'androidx.cardview:cardview:1.0.0'
 	implementation 'androidx.recyclerview:recyclerview:1.0.0'
 
-	// Standard dependencies
+	// Default dependencies
 	implementation fileTree(dir: 'libs', include: ['*.jar'])
 	implementation 'androidx.appcompat:appcompat:1.1.0-alpha01'
 	implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
